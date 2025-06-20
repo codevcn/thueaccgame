@@ -1,0 +1,7 @@
+@use "colors.scss";
+@use "sizes.scss";
+
+.CSS-blur-black-bg {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 60%, rgba(0, 0, 0, 0) 100%);
+  padding-bottom: 20px;
+}
