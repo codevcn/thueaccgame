@@ -8,7 +8,11 @@
 
 body {
   min-height: 100vh;
-  background-image: repeating-linear-gradient(to bottom, #0d1a33, #040811);
+  background-image: var(--vcn-regular-gradient-dark-cl);
+}
+
+svg {
+  display: flex;
 }
 
 input,

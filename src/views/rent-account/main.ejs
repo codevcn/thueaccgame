@@ -1,0 +1,102 @@
+<div class="w-[80%] mx-auto p-5">
+  <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-5">
+    Tài khoản của bạn chưa được kích hoạt tính năng cho thuê tài khoản.
+    Điền form <a href="#" class="underline font-semibold">TẠI ĐÂY</a> để kích hoạt.
+  </div>
+
+  <div class="flex gap-5">
+    <div class="w-[60%] bg-regular-gray-cl text-regular-light-gray-cl p-5 border border-gray-600 rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold text-inherit mb-6">Cho thuê tài khoản</h2>
+
+      <div class="mb-4">
+        <label class="block text-sm font-semibold text-inherit mb-2">Loại tài khoản:</label>
+        <select
+          class="bg-transparent text-regular-light-gray-cl border border-gray-600 border-solid w-full px-3 py-2 rounded-md text-sm focus:border-regular-blue-cl focus:outline-none focus:ring-2 focus:ring-regular-light-blue-cl">
+          <option>-- Chọn loại tài khoản --</option>
+          <option>Tài khoản thuê theo giờ</option>
+          <option>Tài khoản thuê theo ngày</option>
+          <option>Tài khoản thuê theo tuần</option>
+          <option>Tài khoản thuê theo tháng</option>
+          <option>Tài khoản thuê theo năm</option>
+        </select>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-semibold text-inherit mb-2">Tài khoản game:</label>
+        <input type="text" placeholder="Nhập tài khoản game"
+          class="bg-transparent border border-gray-600 border-solid w-full px-3 py-2 rounded-md text-sm text-white focus:border-regular-blue-cl focus:outline-none focus:ring-2 focus:ring-regular-light-blue-cl">
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-semibold text-inherit mb-2">Mật khẩu:</label>
+        <input type="password" placeholder="Nhập mật khẩu"
+          class="bg-transparent border border-gray-600 border-solid w-full px-3 py-2 rounded-md text-sm text-white focus:border-regular-blue-cl focus:outline-none focus:ring-2 focus:ring-regular-light-blue-cl">
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-semibold text-inherit mb-2">Lời nhắn gửi tới người thuê:</label>
+        <textarea placeholder="Viết lời nhắn..."
+          class="bg-transparent border border-gray-600 border-solid w-full px-3 py-2 rounded-md text-sm text-white focus:border-regular-blue-cl focus:outline-none focus:ring-2 focus:ring-regular-light-blue-cl resize-none"
+          rows="4"></textarea>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-semibold text-inherit mb-2">Hình ảnh:</label>
+        <input type="file" multiple placeholder="Chọn tệp tin / hình ảnh..."
+          class="bg-transparent border border-gray-600 border-solid w-full px-3 rounded-md text-sm text-white focus:border-regular-blue-cl focus:outline-none focus:ring-2 focus:ring-regular-light-blue-cl">
+      </div>
+
+      <div class="flex gap-3 mb-6">
+        <div class="flex-1">
+          <label class="block text-sm font-semibold text-inherit mb-2">Giá tiền (VND):</label>
+          <input type="text" placeholder="Nhập giá tiền..."
+            class="bg-transparent border border-gray-600 border-solid w-full px-3 py-2 rounded-md text-sm text-white focus:border-regular-blue-cl focus:outline-none focus:ring-2 focus:ring-regular-light-blue-cl">
+        </div>
+        <div class="flex-1">
+          <label class="block text-sm font-semibold text-inherit mb-2">Thời gian (Giờ):</label>
+          <input type="text" placeholder="Nhập thời gian..."
+            class="bg-transparent border border-gray-600 border-solid w-full px-3 py-2 rounded-md text-sm text-white focus:border-regular-blue-cl focus:outline-none focus:ring-2 focus:ring-regular-light-blue-cl">
+        </div>
+      </div>
+
+      <button
+        class="bg-regular-blue-cl hover:bg-regular-blue-hover-cl text-white px-5 py-2 w-full rounded-md font-bold text-base cursor-pointer transition-colors duration-300">
+        Cho thuê ngay
+      </button>
+    </div>
+
+    <div class="w-[40%] bg-regular-gray-cl text-white p-5 border border-gray-600 rounded-lg shadow-md h-fit">
+      <h2 class="text-xl font-bold text-[#ff6666] mb-4">Chú ý:</h2>
+      <p class="text-[#ff6666] font-bold mb-3">
+        Cấm để lời nhắn là thông tin liên hệ, kéo thành viên web ra thuê ngoài
+        (phát hiện cấm vĩnh viễn, tịch thu hết tiền)!
+      </p>
+      <p class="mb-3">Chọn sai loại game để giảm phí sẽ tịch thu hết tiền!</p>
+      <p><strong>Nhắn tin cho ADMIN để được bật tính năng cho thuê!</strong></p>
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 py-8 mt-10">
+    <h1 class="text-3xl font-bold text-center mb-4 uppercase text-white">Lịch sử cho thuê tài khoản</h1>
+
+    <div class="overflow-hidden border border-gray-600 rounded-lg">
+      <table class="min-w-full">
+        <thead class="bg-regular-gray-cl text-white">
+          <tr>
+            <th class="py-3 px-6 text-left font-semibold border-r border-regular-light-gray-cl">Nội dung</th>
+            <th class="py-3 px-6 text-left font-semibold border-r border-regular-light-gray-cl">Số tiền nhận</th>
+            <th class="py-3 px-6 text-left font-semibold border-r border-regular-light-gray-cl">Ngày</th>
+            <th class="py-3 px-6 text-left font-semibold">Trạng Thái</th>
+          </tr>
+        </thead>
+        <tbody class="bg-regular-black-cl text-gray-300">
+          <tr>
+            <td colspan="4" class="text-center py-8">
+              Bạn Chưa Có Cuộc Giao Dịch Nào
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -10,10 +10,13 @@ export default {
         "regular-dark-blue-cl": "var(--vcn-regular-dark-blue-cl)",
         "regular-light-blue-cl": "var(--vcn-regular-light-blue-cl)",
         "regular-gray-cl": "var(--vcn-regular-gray-cl)",
+        "regular-light-gray-cl": "var(--vcn-regular-light-gray-cl)",
         "regular-gradient-dark-cl": "var(--vcn-regular-gradient-dark-cl)",
+        "regular-gradient-dark-blue-cl": "var(--vcn-regular-gradient-dark-blue-cl)",
       },
       height: {
         "hero-bg": "var(--vcn-hero-bg-height)",
+        "hero-bg-shorter": "var(--vcn-hero-bg-shorter-height)",
       },
     },
   },

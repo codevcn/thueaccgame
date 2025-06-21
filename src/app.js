@@ -1,5 +1,6 @@
 // app.js
 import express from "express"
+import { DevHelper } from "./utils/helpers.js"
 
 const app = express()
 const PORT = 3000
@@ -7,6 +8,7 @@ const PORT = 3000
 // Set EJS làm view engine
 app.set("view engine", "ejs")
 app.set("views", "src/views")
+app.use(express.json())
 
 // Dùng static file từ thư mục public
 app.use(express.static("public"))
@@ -71,25 +73,70 @@ const items = [
     avatar: "/imgs/skull.png",
   },
 ]
+
+const loggedInUsers = new Map()
+
 // Route chính
 app.get("/", async (req, res) => {
   fetchItemsCount = 0
   res.render("home/home-page", { items })
 })
 
-app.get("/api/items", async (req, res) => {
-  await new Promise((resolve) => setTimeout(resolve, 1000))
+app.get("/api/auth/logout", async (req, res) => {
+  const { username } = req.body
+  if (!username) {
+    res.status(400).json({ message: "Username is required" })
+    return
+  }
+  if (loggedInUsers.has(username)) {
+    loggedInUsers.delete(username)
+  }
+  res.status(200).json({ message: "Logout successful" })
+})
+
+app.get("/profile", async (req, res) => {
+  res.render("profile/profile-page", { user: loggedInUsers.get("admin") })
+})
+
+app.get("/rent-account", async (req, res) => {
+  res.render("rent-account/rent-account-page")
+})
+
+app.get("/api/account/accounts", async (req, res) => {
+  await DevHelper.delay(1000)
   let itemsToFetch = [...items]
   if (fetchItemsCount === 2) {
     fetchItemsCount--
     itemsToFetch = []
   }
   fetchItemsCount++
-  res.status(200).json({ items: itemsToFetch })
+  res.status(200).json({ items: itemsToFetch, user: loggedInUsers.get("admin") })
+})
+
+app.post("/api/auth/login", async (req, res) => {
+  await DevHelper.delay(1000)
+  const { username, password } = req.body
+  if (username === "admin" && password === "123456") {
+    loggedInUsers.set(username, {
+      username,
+      password,
+    })
+    res.status(200).json({ message: "Login successful" })
+  } else {
+    res.status(401).json({ message: "Login failed" })
+  }
 })
 
 app.get("/contact", async (req, res) => {
   res.render("contact/contact-page")
+})
+
+app.get("/login", async (req, res) => {
+  res.render("login/login-page")
+})
+
+app.get("/deposit/card", async (req, res) => {
+  res.render("deposit/by-card/by-card-page")
 })
 
 app.listen(PORT, () => {

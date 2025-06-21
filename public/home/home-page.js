@@ -1,5 +1,5 @@
 import { AccCard } from "/utils/components.js"
-import { AppLoadingHelper, AxiosErrorHandler, LitHTMLHelper, SwalHelper } from "/utils/helpers.js"
+import { AppLoadingHelper, AxiosErrorHandler, LitHTMLHelper, Toaster } from "/utils/helpers.js"
 import { AccountService } from "/services/account-service.js"
 
 class HomePageManager {
@@ -8,23 +8,15 @@ class HomePageManager {
   constructor() {
     this.stallGrid = document.getElementById("stall-grid")
     this.infiniteScrollFlag = document.getElementById("infinite-scroll-flag")
+    this.loadMoreBtn = document.getElementById("load-more-btn")
+    this.loadMoreContainer = document.getElementById("load-more-container")
     this.isFetchingItems = false
 
     this.loadMoreAccounts()
 
-    if (this.infiniteScrollFlag) {
-      this.observer = new IntersectionObserver(
-        (entries) => {
-          if (entries[0].isIntersecting) {
-            this.loadMoreAccounts()
-          }
-        },
-        {
-          rootMargin: "0px 0px 5px 0px", // Load when 5px away from the flag
-        }
-      )
-      this.observer.observe(this.infiniteScrollFlag)
-    }
+    this.loadMoreBtn.addEventListener("click", () => {
+      this.loadMoreAccounts()
+    })
   }
 
   showIsMoreText() {
@@ -49,11 +41,12 @@ class HomePageManager {
           }
         } else {
           this.isMoreItems = false
+          this.loadMoreContainer.hidden = true
           this.showIsMoreText()
         }
       })
       .catch((error) => {
-        SwalHelper.error("Error", AxiosErrorHandler.handleHTTPError(error).message)
+        Toaster.error("Error", AxiosErrorHandler.handleHTTPError(error).message)
       })
       .finally(() => {
         AppLoadingHelper.hide()

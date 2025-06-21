@@ -1,5 +1,4 @@
 import { render } from "https://esm.run/lit-html@1"
-import { HTTP_STATUS } from "./contants.js"
 
 export class LitHTMLHelper {
   static getFragment(Render, data) {
@@ -23,37 +22,62 @@ export class AppLoadingHelper {
 }
 
 export class AxiosErrorHandler {
-  static handleHTTPError(originalError, defaultMessage = "Data requirement failed...") {
-    const error = {
-      httpStatus: HTTP_STATUS.INTERNAL_SERVER_ERROR,
-      message: defaultMessage,
-      originalError,
-    }
-    const responseOfError = originalError.response
-    //if error was made by server at backend
-    if (responseOfError) {
-      error.httpStatus = responseOfError.status //update error status
-      const dataOfResponse = responseOfError.data
-      if (typeof dataOfResponse === "string") {
-        error.message = dataOfResponse
+  static MAX_LEN_OF_ERROR_MESSAGE = 100
+
+  static handleHTTPError(originalError) {
+    let statusCode = 500 // Internal Server Error
+    let message = "Unknown Error!"
+    let isCanceled = false
+
+    if (this.isAxiosError(originalError)) {
+      const responseOfError = originalError.response
+
+      if (responseOfError) {
+        // if error was made by server at backend
+        statusCode = responseOfError.status // update error status
+
+        const dataOfResponse = responseOfError.data
+
+        if (typeof dataOfResponse === "string") {
+          message = "Invalid request"
+        } else {
+          message = dataOfResponse.message // update error message
+
+          if (message.length > AxiosErrorHandler.MAX_LEN_OF_ERROR_MESSAGE) {
+            message = `${message.slice(0, AxiosErrorHandler.MAX_LEN_OF_ERROR_MESSAGE)}...`
+          }
+        }
+      } else if (originalError.request) {
+        // The request was made but no response was received
+        statusCode = 502 // Bad Gateway
+        message = "Bad network or error from server."
       } else {
-        error.message = dataOfResponse.message //update error message
+        // Something happened in setting up the request that triggered an Error
+        message = originalError.message
       }
-    } else if (error.originalError.request) {
-      //The request was made but no response was received
-      error.httpStatus = HTTP_STATUS.BAD_GATEWAY
-      error.message = "Bad network or error"
-    } else {
-      //Something happened in setting up the request that triggered an Error
+    } else if (originalError instanceof axios.CanceledError) {
+      isCanceled = true
+      message = originalError.message
+    } else if (originalError instanceof Error) {
+      message = originalError.message
     }
-    return error
+
+    return {
+      originalError,
+      statusCode,
+      message,
+      isCanceled,
+    }
+  }
+
+  static isAxiosError(error) {
+    return error instanceof axios.AxiosError
   }
 }
 
-export class SwalHelper {
+export class Toaster {
   static success(title, message) {
     Swal.fire({
-      timer: 3000,
       icon: "success",
       title,
       text: message,
@@ -62,10 +86,15 @@ export class SwalHelper {
 
   static error(title, message) {
     Swal.fire({
-      timer: 3000,
       icon: "error",
       title,
       text: message,
     })
+  }
+}
+
+export class RouterHelper {
+  static pureNavigator(path) {
+    window.location.href = path
   }
 }

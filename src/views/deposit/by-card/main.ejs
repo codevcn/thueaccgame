@@ -1,0 +1,80 @@
+<div class="w-[80%] mx-auto p-5">
+  <h1 class="text-4xl font-bold text-white mb-10">Nạp tiền</h1>
+
+  <div class="flex gap-5">
+    <!-- Deposit Form -->
+    <div class="w-[60%] bg-regular-gray-cl text-regular-light-gray-cl p-5 border border-gray-600 rounded-lg shadow-md">
+      <h2 class="text-xl font-bold text-red-500 mb-4">Nạp bằng thẻ cào</h2>
+
+      <div class="mb-4">
+        <select
+          class="bg-transparent text-regular-light-gray-cl border border-gray-600 w-full px-3 py-2 rounded-md text-sm focus:border-regular-blue-cl focus:outline-none">
+          <option>Thẻ MOBIFONE</option>
+          <option>Thẻ VIETTEL</option>
+          <option>Thẻ VINAPHONE</option>
+        </select>
+      </div>
+
+      <div class="mb-4">
+        <select
+          class="bg-transparent text-regular-light-gray-cl border border-gray-600 w-full px-3 py-2 rounded-md text-sm focus:border-regular-blue-cl focus:outline-none">
+          <option>10,000đ - 30%</option>
+          <option>20,000đ - 30%</option>
+          <option>50,000đ - 30%</option>
+          <option>100,000đ - 30%</option>
+        </select>
+      </div>
+
+      <div class="mb-4">
+        <input type="text" placeholder="Mã thẻ"
+          class="bg-transparent border border-gray-600 border-solid w-full px-3 py-2 rounded-md text-sm text-white focus:border-regular-blue-cl focus:outline-none">
+      </div>
+
+      <div class="mb-6">
+        <input type="text" placeholder="Số seri"
+          class="bg-transparent border border-gray-600 border-solid w-full px-3 py-2 rounded-md text-sm text-white focus:border-regular-blue-cl focus:outline-none">
+      </div>
+
+      <button
+        class="bg-regular-blue-cl hover:bg-regular-blue-hover-cl text-regular-black-cl px-5 py-2 w-full rounded-md font-bold text-base cursor-pointer transition-colors duration-300">
+        Nạp ngay
+      </button>
+    </div>
+
+    <!-- Notice Box -->
+    <div class="w-[40%] bg-regular-gray-cl text-white p-5 border border-gray-600 rounded-lg shadow-md h-fit">
+      <h2 class="text-xl font-bold text-red-500 mb-4">(*) Chú ý</h2>
+      <ul class="list-disc list-inside space-y-2 text-sm">
+        <li class="text-red-500">Chọn sai mệnh giá sẽ bị mất thẻ</li>
+        <li class="text-red-500">Nạp thẻ vina trừ phí thấp nhất</li>
+        <li>% là số % phí sẽ bị trừ khi nạp thẻ cào</li>
+        <li>Khuyến khích nạp bằng ngân hàng sẽ không mất phí</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Transaction History -->
+  <div class="container mx-auto px-4 py-8 mt-10">
+    <h1 class="text-3xl font-bold text-center mb-8 uppercase text-white">Lịch sử nạp tiền</h1>
+
+    <div class="overflow-hidden border border-gray-600 rounded-lg">
+      <table class="min-w-full">
+        <thead class="bg-regular-gray-cl text-white">
+          <tr>
+            <th class="py-3 px-6 text-left font-semibold border-r border-gray-600">Nội dung</th>
+            <th class="py-3 px-6 text-left font-semibold border-r border-gray-600">Số tiền nhận</th>
+            <th class="py-3 px-6 text-left font-semibold border-r border-gray-600">Ngày</th>
+            <th class="py-3 px-6 text-left font-semibold">Trạng Thái</th>
+          </tr>
+        </thead>
+        <tbody class="bg-semi-dark-cl text-gray-300">
+          <tr>
+            <td colspan="4" class="text-center py-8">
+              Bạn Chưa Có Cuộc Giao Dịch Nào
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
