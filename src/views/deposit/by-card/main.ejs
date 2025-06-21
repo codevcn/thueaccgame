@@ -8,7 +8,7 @@
 
       <div class="mb-4">
         <select
-          class="bg-transparent text-regular-light-gray-cl border border-gray-600 w-full px-3 py-2 rounded-md text-sm focus:border-regular-blue-cl focus:outline-none">
+          class="bg-transparent text-regular-light-gray-cl border border-gray-600 w-full px-3 py-2 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-regular-light-blue-cl">
           <option>Thẻ MOBIFONE</option>
           <option>Thẻ VIETTEL</option>
           <option>Thẻ VINAPHONE</option>
@@ -17,7 +17,7 @@
 
       <div class="mb-4">
         <select
-          class="bg-transparent text-regular-light-gray-cl border border-gray-600 w-full px-3 py-2 rounded-md text-sm focus:border-regular-blue-cl focus:outline-none">
+          class="bg-transparent text-regular-light-gray-cl border border-gray-600 w-full px-3 py-2 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-regular-light-blue-cl">
           <option>10,000đ - 30%</option>
           <option>20,000đ - 30%</option>
           <option>50,000đ - 30%</option>
@@ -27,12 +27,12 @@
 
       <div class="mb-4">
         <input type="text" placeholder="Mã thẻ"
-          class="bg-transparent border border-gray-600 border-solid w-full px-3 py-2 rounded-md text-sm text-white focus:border-regular-blue-cl focus:outline-none">
+          class="bg-transparent border border-gray-600 border-solid w-full px-3 py-2 rounded-md text-sm text-white focus:outline-none focus:ring-2 focus:ring-regular-light-blue-cl">
       </div>
 
       <div class="mb-6">
         <input type="text" placeholder="Số seri"
-          class="bg-transparent border border-gray-600 border-solid w-full px-3 py-2 rounded-md text-sm text-white focus:border-regular-blue-cl focus:outline-none">
+          class="bg-transparent border border-gray-600 border-solid w-full px-3 py-2 rounded-md text-sm text-white focus:outline-none focus:ring-2 focus:ring-regular-light-blue-cl">
       </div>
 
       <button
@@ -53,28 +53,5 @@
     </div>
   </div>
 
-  <!-- Transaction History -->
-  <div class="container mx-auto px-4 py-8 mt-10">
-    <h1 class="text-3xl font-bold text-center mb-8 uppercase text-white">Lịch sử nạp tiền</h1>
-
-    <div class="overflow-hidden border border-gray-600 rounded-lg">
-      <table class="min-w-full">
-        <thead class="bg-regular-gray-cl text-white">
-          <tr>
-            <th class="py-3 px-6 text-left font-semibold border-r border-gray-600">Nội dung</th>
-            <th class="py-3 px-6 text-left font-semibold border-r border-gray-600">Số tiền nhận</th>
-            <th class="py-3 px-6 text-left font-semibold border-r border-gray-600">Ngày</th>
-            <th class="py-3 px-6 text-left font-semibold">Trạng Thái</th>
-          </tr>
-        </thead>
-        <tbody class="bg-semi-dark-cl text-gray-300">
-          <tr>
-            <td colspan="4" class="text-center py-8">
-              Bạn Chưa Có Cuộc Giao Dịch Nào
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+  <%- include('./history') %>
 </div>

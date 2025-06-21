@@ -1,0 +1,48 @@
+<div class="w-[80%] mx-auto p-5">
+  <h1 class="text-4xl font-bold text-white mb-4">Nạp tiền</h1>
+  <p class="text-red-500 mb-10">
+    * Tiền nạp vào không thể rút ra ! Không hỗ trợ các lệnh nạp sai nội dung, quên ghi nội dung chuyển tiền
+  </p>
+
+  <div class="bg-regular-gray-cl p-8 rounded-lg shadow-md flex gap-8 items-center">
+    <!-- Bank Info -->
+    <div class="w-1/2 space-y-6">
+      <h2 class="text-2xl font-bold text-red-500">ACB</h2>
+
+      <div>
+        <label class="block text-sm font-semibold text-regular-light-gray-cl mb-2">Chủ tài khoản</label>
+        <div class="bg-gray-700 text-white p-3 rounded-md">
+          VÕ THÀNH HƯNG
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold text-regular-light-gray-cl mb-2">Số tài khoản</label>
+        <div class="bg-gray-700 text-white p-3 rounded-md">
+          16684567
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold text-red-500 mb-2">Nội dung chuyển khoản (*)</label>
+        <div class="bg-gray-700 text-white p-3 rounded-md">
+          A TAG4883 A
+        </div>
+      </div>
+
+      <ul class="text-red-500 font-semibold">
+        <li>Ghi đúng nội dung để được cộng tiền ngay!</li>
+        <li>Quét Mã QR để tự động điền nội dung!</li>
+      </ul>
+    </div>
+
+    <!-- QR Code -->
+    <div class="w-1/2 flex justify-center">
+      <img
+        src="https://api.vietqr.io/image/970416-16684567-G8zO4k3.jpg?accountName=VO%20THANH%20HUNG&amount=100000&addInfo=A%20TAG4883%20A"
+        alt="QR Code" class="w-72 h-72 border-4 border-white rounded-lg">
+    </div>
+  </div>
+
+  <%- include('./history') %>
+</div>

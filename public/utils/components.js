@@ -77,11 +77,7 @@ export const AccCard = (item) => {
             <p class="text-gray-400 text-xs">VND</p>
           </div>
         </div>
-        <button
-          class="mt-4 w-full bg-regular-blue-cl hover:bg-btn-blue-hover-cl text-gray-900 hover:text-white font-bold py-1.5 px-4 rounded-lg transition-colors duration-300"
-        >
-          Thuê ngay
-        </button>
+        <button class="CSS-button-blue-decoration py-1.5 mt-2">Thuê ngay</button>
       </div>
     </div>
   `

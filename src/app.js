@@ -139,6 +139,10 @@ app.get("/deposit/card", async (req, res) => {
   res.render("deposit/by-card/by-card-page")
 })
 
+app.get("/deposit/banking", async (req, res) => {
+  res.render("deposit/by-banking/by-banking-page")
+})
+
 app.listen(PORT, () => {
   console.log(`>>> Server đang chạy tại http://localhost:${PORT}`)
 })
