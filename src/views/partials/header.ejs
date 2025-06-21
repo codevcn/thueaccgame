@@ -1,0 +1,35 @@
+<!-- Header: Navbar -->
+<header id="header" class="CSS-blur-bottom-black-bg py-3 px-6 flex items-center justify-between sticky top-0 z-[99]">
+  <a href="/" class="flex items-center gap-4">
+    <img src="/logo.png" alt="Logo" class="h-10 w-10 rounded-full bg-regular-blue-cl object-cover" />
+    <span class="text-xl font-bold text-regular-blue-cl">ThueAccGame Com</span>
+  </a>
+  <nav class="flex gap-8 items-center font-bold">
+    <div class="text-white">
+      <button class="flex items-center gap-2 hover:text-regular-blue-cl" data-dropdown-toggle="deposit-menu">
+        <span>Nạp tiền</span>
+        <%- include('./icons/dropdown-icon') %>
+      </button>
+      <div id="deposit-menu"
+        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
+        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-600 hover:text-regular-blue-cl">Nạp thẻ cào</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-600 hover:text-regular-blue-cl">Nạp qua ngân hàng</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-600 hover:text-regular-blue-cl">Hướng dẫn nạp tiền</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <a href="/contact" class="text-white hover:text-regular-blue-cl">Liên hệ</a>
+    <div>
+      <button
+        class="bg-regular-blue-cl text-gray-900 font-bold px-4 py-2 rounded hover:bg-btn-blue-hover-cl hover:text-white">Đăng
+        nhập</button>
+    </div>
+  </nav>
+</header>

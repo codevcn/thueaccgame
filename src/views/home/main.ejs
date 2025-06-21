@@ -1,0 +1,44 @@
+<div id="hero-bg"
+  class="absolute top-0 left-0 w-full z-10 h-hero-bg bg-[url('/imgs/hero-background.png')] bg-cover bg-top bg-no-repeat">
+</div>
+
+<section class="relative">
+  <section id="hero" class="flex flex-col items-center justify-center gap-4 mt-[50px] relative z-20">
+    <img src="/imgs/skull.png" alt="Skull" class="h-[200px]" />
+    <h1 class="CSS-big-text-stroke text-4xl font-extrabold text-regular-blue-cl drop-shadow-lg">ThueAccGame.Com</h1>
+    <p class="CSS-small-text-stroke text-gray-200 mt-2 text-center text-lg font-bold">Nơi thuê acc game uy tín</p>
+  </section>
+
+  <!-- Category -->
+  <section id="category" class="CSS-blur-black-bg flex items-center justify-center gap-2 p-4 mt-[50px] relative z-20">
+    <button
+      class="bg-regular-blue-cl text-regular-black-cl font-semibold text-base px-4 py-2 rounded hover:scale-110 transition">
+      LMHT
+    </button>
+    <button
+      class="bg-regular-blue-cl text-regular-black-cl font-semibold text-base px-4 py-2 rounded hover:scale-110 transition">
+      CSGO
+    </button>
+    <button
+      class="bg-regular-blue-cl text-regular-black-cl font-semibold text-base px-4 py-2 rounded hover:scale-110 transition">
+    ĐTCL
+    </button>
+    <button
+      class="bg-regular-blue-cl text-regular-black-cl font-semibold text-base px-4 py-2 rounded hover:scale-110 transition">
+      VALORANT
+    </button>
+    <button
+      class="bg-regular-blue-cl text-regular-black-cl font-semibold text-base px-4 py-2 rounded hover:scale-110 transition">
+      LIÊN QUÂN
+    </button>
+  </section>
+
+  <%- include('./stall') %>
+
+  <div id="infinite-scroll-flag" class="w-full"></div>
+</section>
+
+<div id="app-loading" hidden
+  class="fixed top-0 left-0 right-0 bottom-0 bg-black/50 flex items-center justify-center z-[999]">
+  <div class="w-10 h-10 border-t-2 border-b-2 border-white rounded-full animate-spin"></div>
+</div>

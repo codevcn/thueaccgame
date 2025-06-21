@@ -1,0 +1,35 @@
+<!-- Floating Contact Buttons -->
+<div id="floating-contact-buttons" class="fixed bottom-8 right-8 z-[1000] flex flex-col items-center gap-4">
+  <!-- Zalo Button -->
+  <a href="#" class="group relative CSS-ripple-container CSS-zalo-ripple w-14 h-14 z-10 CSS-shake-rotate">
+    <div
+      class="absolute inset-0 bg-white rounded-full scale-100 group-hover:scale-110 transition-transform duration-300 opacity-70 group-hover:opacity-100">
+    </div>
+    <div
+      class="relative w-full h-full bg-gray-100 rounded-full flex items-center justify-center shadow-lg border-2 border-blue-400/50 group-hover:border-blue-300 transition-all">
+      <img src="/imgs/zalo-logo.png" alt="Zalo" class="h-8 w-8">
+    </div>
+  </a>
+
+  <!-- Phone Button -->
+  <a href="#" class="group relative CSS-ripple-container CSS-phone-ripple w-14 h-14 CSS-shake-rotate">
+    <div
+      class="absolute inset-0 bg-red-500 rounded-full scale-100 group-hover:scale-110 transition-transform duration-300 opacity-70 group-hover:opacity-100">
+    </div>
+    <div
+      class="relative w-full h-full bg-red-600 text-white rounded-full flex items-center justify-center shadow-lg border-2 border-red-400/50 group-hover:border-red-300 transition-all">
+      <%- include('./icons/phone-icon') %>
+    </div>
+  </a>
+
+  <!-- Messenger Button -->
+  <a href="#" class="group relative CSS-ripple-container CSS-messenger-ripple w-14 h-14 CSS-shake-rotate">
+    <div
+      class="absolute inset-0 bg-white rounded-full scale-100 group-hover:scale-110 transition-transform duration-300 opacity-70 group-hover:opacity-100">
+    </div>
+    <div
+      class="relative w-full h-full bg-gray-100 rounded-full flex items-center justify-center shadow-lg border-2 border-blue-400/50 group-hover:border-blue-300 transition-all">
+      <img src="/imgs/messenger-logo.png" alt="Messenger" class="h-8 w-8">
+    </div>
+  </a>
+</div>

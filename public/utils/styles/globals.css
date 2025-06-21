@@ -1,29 +1,107 @@
 :root {
-  --vcn-regular-dark-cl: #050d1e;
+  --vcn-regular-black-cl: #212224;
   --vcn-regular-blue-cl: #2ba6ff;
-  --vcn-regular-blue-hover-cl: #3caeff;
-  --vcn-bg-gradient-top-cl: #1a2a6c;
-  --vcn-bg-gradient-bottom-cl: #000000;
-  --vcn-blue-main-cl: #2563eb;
-  --vcn-blue-light-cl: #60a5fa;
-  --vcn-blue-glow-cl: #38bdf8;
-  --vcn-white-cl: #ffffff;
-  --vcn-text-main-cl: #e0e7ef;
-  --vcn-border-cl: #233554;
-  --vcn-input-bg-cl: #0f172a;
-  --vcn-input-border-cl: #334155;
-  --vcn-btn-blue-cl: #2563eb;
-  --vcn-btn-blue-hover-cl: #1d4ed8;
-  --vcn-btn-glow-cl: #38bdf8;
+  --vcn-regular-blue-hover-cl: #0f86da;
+  --vcn-regular-dark-blue-cl: #006ed7;
+  --vcn-regular-light-blue-cl: #93c5fd;
+  --vcn-regular-gray-cl: #2f3036;
+  --vcn-regular-gradient-dark-cl: linear-gradient(to bottom, #0d1a33, #040811);
 }
 
 :root {
-  --vcn-hero-section-height: 700px;
+  --vcn-hero-bg-height: 800px;
+}
+
+@keyframes ripple-effect {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.6);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+@keyframes shake-rotate-effect {
+  0%, 25% {
+    transform: rotate(0deg);
+  }
+  1.25%, 8.75%, 11.25% {
+    transform: rotate(-10deg);
+  }
+  2.5%, 10% {
+    transform: rotate(10deg);
+  }
+}
+[hidden] {
+  display: none;
+}
+
+body {
+  min-height: 100vh;
+  background-image: repeating-linear-gradient(to bottom, #0d1a33, #040811);
+}
+
+input,
+textarea {
+  border: none;
+  outline: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
 }
 
 .CSS-blur-black-bg {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 60%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0) 30%, rgb(0, 0, 0) 70%, rgba(0, 0, 0, 0));
   padding-bottom: 20px;
+}
+
+.CSS-blur-bottom-black-bg {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 75%, rgba(0, 0, 0, 0) 100%);
+  padding-bottom: 20px;
+}
+
+.CSS-big-text-stroke {
+  text-shadow: -6px -6px 0 #000, -6px 0px 0 #000, -6px 6px 0 #000, 0px -6px 0 #000, 0px 6px 0 #000, 6px -6px 0 #000, 6px 0px 0 #000, 6px 6px 0 #000, -4px -4px 0 #000, -4px 0px 0 #000, -4px 4px 0 #000, 0px -4px 0 #000, 0px 4px 0 #000, 4px -4px 0 #000, 4px 0px 0 #000, 4px 4px 0 #000, -2px -2px 0 #000, -2px 0px 0 #000, -2px 2px 0 #000, 0px -2px 0 #000, 0px 2px 0 #000, 2px -2px 0 #000, 2px 0px 0 #000, 2px 2px 0 #000;
+}
+
+.CSS-small-text-stroke {
+  text-shadow: 2px 0 #000, -2px 0 #000, 0 2px #000, 0 -2px #000, 1px 1px #000, -1px -1px #000, 1px -1px #000, -1px 1px #000;
+}
+
+#floating-contact-buttons .CSS-ripple-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  animation: ripple-effect 2s infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+#floating-contact-buttons .CSS-zalo-ripple::after {
+  background-color: #0068ff;
+  animation-delay: 2s;
+}
+#floating-contact-buttons .CSS-phone-ripple::after {
+  background-color: #ff1d1d;
+  animation-delay: 2s;
+}
+#floating-contact-buttons .CSS-messenger-ripple::after {
+  background-color: #e9e9e9;
+  animation-delay: 2s;
+}
+
+.CSS-shake-rotate {
+  animation: shake-rotate-effect 3s ease-in-out infinite backwards;
+  animation-delay: 2s;
 }
 
 /*# sourceMappingURL=globals.css.map */

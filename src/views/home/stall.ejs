@@ -1,0 +1,44 @@
+<!-- Stall -->
+<section id="stall" class="relative z-20 px-6 sm:px-12 lg:px-24 pb-5 text-white mt-[50px]">
+  <!-- Search -->
+  <div class="flex items-center rounded-[30px] overflow-hidden bg-regular-gray-cl py-2 px-4 relative">
+    <input type="text" placeholder="Tìm kiếm acc..." class="bg-transparent text-base w-full p-2 rounded-md">
+    <button class="absolute right-4 top-1/2 -translate-y-1/2 transform-none text-white hover:text-white font-bold p-2">
+      <%- include('../partials/icons/search-icon') %>
+    </button>
+  </div>
+
+  <!-- Filters and Results Count -->
+  <div class="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4 mt-10">
+    <p class="text-gray-400">About 24 results</p>
+    <div class="flex items-center gap-4 text-sm">
+      <span class="text-gray-400">Sort by:</span>
+      <div class="flex items-center gap-4">
+        <button class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full bg-red-500 border-2 border-red-500"></span>
+          <span>Recommended</span>
+        </button>
+        <button class="flex items-center gap-2 text-gray-400">
+          <span class="w-4 h-4 rounded-full border-2 border-gray-500"></span>
+          <span>Most Recent</span>
+        </button>
+        <button class="flex items-center gap-2 text-gray-400">
+          <span class="w-4 h-4 rounded-full border-2 border-gray-500"></span>
+          <span>Lowest Price</span>
+        </button>
+        <button class="flex items-center gap-2 text-gray-400">
+          <span class="w-4 h-4 rounded-full border-2 border-gray-500"></span>
+          <span>Highest Price</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Listings Grid -->
+  <div id="stall-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+  </div>
+
+  <div id="no-more-text" hidden class="mt-12">
+    <p class="w-full text-center text-gray-400 italic text-lg">Không còn thêm acc nào.</p>
+  </div>
+</section>

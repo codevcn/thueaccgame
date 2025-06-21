@@ -1,0 +1,56 @@
+<footer id="footer" class="bg-regular-gradient-dark-cl backdrop-blur-md text-white mt-10 border-t border-gray-700/50">
+  <div class="max-w-7xl mx-autosm:px-12 lg:px-24">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 p-6">
+      <!-- Logo and About -->
+      <div class="space-y-4 md:col-span-2 lg:col-span-1">
+        <div>
+          <img src="/logo.png" alt="Logo" class="h-10 w-10 rounded-full bg-regular-blue-cl object-cover" />
+          <div class="text-xl font-bold text-regular-blue-cl mt-4">ThueAccGame Com</div>
+        </div>
+        <p class="text-gray-400 text-sm">
+          Nền tảng cho thuê tài khoản game hàng đầu Việt Nam. Uy tín, an toàn và nhanh chóng.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="md:col-start-1 lg:col-start-2">
+        <h3 class="text-sm font-semibold text-gray-200 tracking-wider uppercase">Games</h3>
+        <ul class="mt-4 space-y-2">
+          <li><a href="#" class="text-base text-gray-400 hover:text-regular-blue-cl">GAME A</a></li>
+          <li><a href="#" class="text-base text-gray-400 hover:text-regular-blue-cl">BOSS GAME</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div>
+        <h3 class="text-sm font-semibold text-gray-200 tracking-wider uppercase">Hỗ Trợ</h3>
+        <ul class="mt-4 space-y-2">
+          <li><a href="#" class="text-base text-gray-400 hover:text-regular-blue-cl">Liên Hệ</a></li>
+          <li><a href="#" class="text-base text-gray-400 hover:text-regular-blue-cl">NẠP CARD</a></li>
+          <li><a href="#" class="text-base text-gray-400 hover:text-regular-blue-cl">VOUCHER</a></li>
+        </ul>
+      </div>
+
+      <!-- Social -->
+      <div>
+        <h3 class="text-sm font-semibold text-gray-200 tracking-wider uppercase">Theo dõi</h3>
+        <div class="flex mt-4 space-x-2">
+          <a href="#" class="text-gray-400 hover:text-regular-blue-cl">
+            <span class="sr-only">Facebook</span>
+            <%- include('./icons/facebook-icon') %>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-regular-blue-cl">
+            <span class="sr-only">Discord</span>
+            <%- include('./icons/discord-icon') %>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 border-t border-gray-700/50 p-6 text-center text-sm text-gray-400">
+      <p>&copy; 2025 Dương Anh Tuấn Valorant ACC Rental. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<%- include('./floating-contact-buttons') %>

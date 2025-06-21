@@ -1,0 +1,30 @@
+@keyframes ripple-effect {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.6);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes shake-rotate-effect {
+  0%,
+  25% {
+    transform: rotate(0deg);
+  }
+  1.25%,
+  8.75%,
+  11.25% {
+    transform: rotate(-10deg);
+  }
+  2.5%,
+  10% {
+    transform: rotate(10deg);
+  }
+}
