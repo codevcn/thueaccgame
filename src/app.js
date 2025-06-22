@@ -131,8 +131,8 @@ app.get("/contact", async (req, res) => {
   res.render("contact/contact-page")
 })
 
-app.get("/login", async (req, res) => {
-  res.render("login/login-page")
+app.get("/login-register", async (req, res) => {
+  res.render("login-register/login-register-page")
 })
 
 app.get("/deposit/card", async (req, res) => {
@@ -143,6 +143,6 @@ app.get("/deposit/banking", async (req, res) => {
   res.render("deposit/by-banking/by-banking-page")
 })
 
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`>>> Server đang chạy tại http://localhost:${PORT}`)
 })

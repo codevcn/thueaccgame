@@ -13,6 +13,7 @@ export default {
         "regular-light-gray-cl": "var(--vcn-regular-light-gray-cl)",
         "regular-gradient-dark-cl": "var(--vcn-regular-gradient-dark-cl)",
         "regular-gradient-dark-blue-cl": "var(--vcn-regular-gradient-dark-blue-cl)",
+        "regular-neon-cl": "var(--vcn-regular-neon-cl)",
       },
       height: {
         "hero-bg": "var(--vcn-hero-bg-height)",

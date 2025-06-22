@@ -1,0 +1,97 @@
+<div
+  class="xl:block hidden bg-[url('/imgs/hero-background-mobile-v-full.png')] absolute top-0 right-0 w-[60%] z-10 h-[1000px] bg-cover bg-top bg-no-repeat">
+</div>
+
+<div class="flex items-center w-full relative z-20 min-h-screen">
+  <div
+    class="md:w-[500px] sm:w-[400px] w-[350px] lg:left-0 lg:translate-x-0 left-1/2 translate-x-[-50%] bg-transparent shadow-lg rounded-lg p-8 top-0 absolute">
+    <a href="/" class="my-4 w-full flex justify-center">
+      <!-- <img src="https://g2g-prod.s3.amazonaws.com/images/g2g-logo.svg" alt="G2G Logo" class="h-10"> -->
+      <img src="/imgs/skull.png" alt="Skull" class="h-20 bg-black rounded-full shadow-[0_0_35px_black]" />
+    </a>
+
+    <h1 class="mb-2 text-2xl font-semibold text-center text-white">Chào mừng trở lại!</h1>
+
+    <div class="mb-4 w-full text-center text-regular-light-gray-cl">
+      Đăng nhập vào tài khoản của bạn
+    </div>
+
+    <form id="login-form">
+      <div class="mb-4">
+        <label for="login-username-input" class="block mb-2 text-sm font-medium text-gray-400">Tên đăng nhập</label>
+        <input type="text" id="login-username-input" placeholder="Nhập username..."
+          class="w-full px-4 py-3 text-white border-2 rounded-lg bg-regular-gray-cl border-regular-gray-cl focus:outline-none focus:border-regular-blue-cl">
+      </div>
+
+      <div class="relative mb-4">
+        <label for="login-password-input" class="block mb-2 text-sm font-medium text-gray-400">Mật khẩu</label>
+        <input type="password" id="login-password-input" placeholder="Nhập mật khẩu..."
+          class="w-full px-4 py-3 pr-12 text-white border-2 rounded-lg bg-regular-gray-cl border-regular-gray-cl focus:outline-none focus:border-regular-blue-cl">
+        <button type="button" id="login-toggle-password-btn"
+          class="absolute right-1 top-1/2 translate-y-[3px] px-2 text-gray-400">
+          <span class="QUERY-eye-opened-icon" hidden><%- include('../partials/icons/eye-opened-icon') %></span>
+          <span class="QUERY-eye-closed-icon"><%- include('../partials/icons/eye-closed-icon') %></span>
+        </button>
+      </div>
+
+      <div class="flex items-center justify-between mb-6">
+        <a href="#" class="text-sm text-white underline hover:text-regular-blue-cl">Quên mật khẩu?</a>
+      </div>
+
+      <div class="flex items-center space-x-4">
+        <button type="submit" class="CSS-button-white-decoration py-[10px] w-full">
+          Đăng nhập
+        </button>
+      </div>
+
+      <p class="text-center text-sm text-regular-light-gray-cl mt-5">
+        <span>Chưa có tài khoản?</span>
+        <span id="login-form-switcher" class="cursor-pointer text-regular-neon-cl CSS-neon-text-hover font-bold">Đăng
+          ký</span>
+      </p>
+    </form>
+
+    <form id="register-form" hidden>
+      <div class="mb-4">
+        <label for="register-username-input" class="block mb-2 text-sm font-medium text-gray-400">Tên đăng nhập</label>
+        <input type="text" id="register-username-input" placeholder="Nhập username..."
+          class="w-full px-4 py-3 text-white border-2 rounded-lg bg-regular-gray-cl border-regular-gray-cl focus:outline-none focus:border-regular-blue-cl">
+      </div>
+
+      <div class="relative mb-4">
+        <label for="register-password-input" class="block mb-2 text-sm font-medium text-gray-400">Mật khẩu</label>
+        <input type="password" id="register-password-input" placeholder="Nhập mật khẩu..."
+          class="w-full px-4 py-3 pr-12 text-white border-2 rounded-lg bg-regular-gray-cl border-regular-gray-cl focus:outline-none focus:border-regular-blue-cl">
+        <button type="button" id="register-toggle-password-btn"
+          class="absolute right-1 top-1/2 translate-y-[3px] px-2 text-gray-400">
+          <span class="QUERY-eye-opened-icon" hidden><%- include('../partials/icons/eye-opened-icon') %></span>
+          <span class="QUERY-eye-closed-icon"><%- include('../partials/icons/eye-closed-icon') %></span>
+        </button>
+      </div>
+
+      <div class="relative mb-4">
+        <label for="register-confirm-password-input" class="block mb-2 text-sm font-medium text-gray-400">Xác nhận mật
+          khẩu</label>
+        <input type="password" id="register-confirm-password-input" placeholder="Nhập lại mật khẩu..."
+          class="w-full px-4 py-3 pr-12 text-white border-2 rounded-lg bg-regular-gray-cl border-regular-gray-cl focus:outline-none focus:border-regular-blue-cl">
+        <button type="button" id="register-toggle-confirm-password-btn"
+          class="absolute right-1 top-1/2 translate-y-[3px] px-2 text-gray-400">
+          <span class="QUERY-eye-opened-icon" hidden><%- include('../partials/icons/eye-opened-icon') %></span>
+          <span class="QUERY-eye-closed-icon"><%- include('../partials/icons/eye-closed-icon') %></span>
+        </button>
+      </div>
+
+      <div class="flex items-center space-x-4">
+        <button type="submit" class="CSS-button-white-decoration py-[10px] w-full">
+          Đăng ký
+        </button>
+      </div>
+
+      <p class="text-center text-sm text-regular-light-gray-cl mt-5">
+        <span>Đã có tài khoản?</span>
+        <span id="register-form-switcher" class="cursor-pointer text-regular-neon-cl CSS-neon-text-hover font-bold">Đăng
+          nhập</span>
+      </p>
+    </form>
+  </div>
+</div>

@@ -1,6 +1,6 @@
-import { AccCard } from "/utils/components.js"
-import { AppLoadingHelper, AxiosErrorHandler, LitHTMLHelper, Toaster } from "/utils/helpers.js"
-import { AccountService } from "/services/account-service.js"
+import { AccCard, showModal, hideModal } from "../utils/components.js"
+import { AppLoadingHelper, AxiosErrorHandler, LitHTMLHelper, Toaster } from "../utils/helpers.js"
+import { AccountService } from "../services/account-service.js"
 
 class HomePageManager {
   isMoreItems = true
@@ -17,6 +17,14 @@ class HomePageManager {
     this.loadMoreBtn.addEventListener("click", () => {
       this.loadMoreAccounts()
     })
+
+    // Add close modal listener
+    const closeModalBtn = document.getElementById("close-modal-btn")
+    if (closeModalBtn) {
+      closeModalBtn.addEventListener("click", () => {
+        hideModal("rent-now-modal")
+      })
+    }
   }
 
   showIsMoreText() {
@@ -24,6 +32,22 @@ class HomePageManager {
     if (noMoreText) {
       noMoreText.hidden = false
     }
+  }
+
+  // Add event listeners to rent now buttons
+  addRentNowListeners() {
+    const rentButtons = document.querySelectorAll('.rent-now-btn')
+    rentButtons.forEach(button => {
+      // Remove existing listeners to prevent duplicates
+      button.removeEventListener('click', this.handleRentNowClick)
+      // Add new listener
+      button.addEventListener('click', this.handleRentNowClick)
+    })
+  }
+
+  handleRentNowClick = (event) => {
+    const itemId = event.target.getAttribute('data-item-id')
+    showModal('rent-now-modal')
   }
 
   async loadMoreAccounts() {
@@ -39,6 +63,8 @@ class HomePageManager {
             const fragment = LitHTMLHelper.getFragment(AccCard, item)
             this.stallGrid.appendChild(fragment)
           }
+          // Add event listeners after rendering new items
+          this.addRentNowListeners()
         } else {
           this.isMoreItems = false
           this.loadMoreContainer.hidden = true

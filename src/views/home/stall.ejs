@@ -1,5 +1,5 @@
 <!-- Stall -->
-<section id="stall" class="relative z-20 px-6 sm:px-12 lg:px-24 pb-5 text-white mt-[50px]">
+<section id="stall" class="relative z-20 md:px-6 px-2 pb-5 text-white mt-[50px]">
   <!-- Search -->
   <div class="flex items-center rounded-[30px] overflow-hidden bg-regular-gray-cl py-2 px-4 relative">
     <input type="text" placeholder="Tìm kiếm acc..." class="bg-transparent text-base w-full p-2 rounded-md">
@@ -11,16 +11,12 @@
   <!-- Filters and Results Count -->
   <div class="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4 mt-10">
     <p class="text-gray-400">About 24 results</p>
-    <div class="flex items-center gap-4 text-sm">
+    <div class="flex md:flex-row flex-col items-center gap-4 text-sm">
       <span class="text-gray-400">Sort by:</span>
       <div class="flex items-center gap-4">
-        <button class="flex items-center gap-2">
-          <span class="w-4 h-4 rounded-full bg-regular-blue-cl border-2 border-regular-blue-cl"></span>
-          <span>Recommended</span>
-        </button>
         <button class="flex items-center gap-2 text-gray-400">
-          <span class="w-4 h-4 rounded-full border-2 border-gray-500"></span>
-          <span>Most Recent</span>
+          <span class="w-4 h-4 rounded-full border-gray-500 bg-regular-blue-cl border-2 border-regular-blue-cl"></span>
+          <span>Latest</span>
         </button>
         <button class="flex items-center gap-2 text-gray-400">
           <span class="w-4 h-4 rounded-full border-2 border-gray-500"></span>
@@ -35,13 +31,12 @@
   </div>
 
   <!-- Listings Grid -->
-  <div id="stall-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+  <div id="stall-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-2 md:gap-6">
   </div>
 
   <!-- Load More Button -->
   <div id="load-more-container" class="flex justify-center mt-10 w-full">
-    <button id="load-more-btn"
-      class="bg-regular-blue-cl text-regular-black-cl font-semibold text-base px-4 py-2 rounded hover:scale-110 transition">
+    <button id="load-more-btn" class="CSS-button-blue-decoration px-4 py-2">
       Xem thêm
     </button>
   </div>
@@ -50,3 +45,47 @@
     <p class="w-full text-center text-gray-400 italic text-lg">Không còn thêm acc nào.</p>
   </div>
 </section>
+
+<!-- Modal -->
+<div id="rent-now-modal" tabindex="-1" aria-hidden="true"
+  class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[990] justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full bg-black/50">
+  <div
+    class="relative w-full max-w-md bg-regular-gray-cl text-regular-light-gray-cl p-6 border border-gray-600 rounded-lg shadow-md">
+    <!-- Close button -->
+    <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl font-bold">
+      X
+    </button>
+
+    <h3 class="text-xl font-bold text-white mb-4">Quy định thuê Acc</h3>
+
+    <div class="mb-4">
+      <label class="block text-sm font-semibold text-white mb-2">Quy định:</label>
+      <div
+        class="bg-transparent border border-gray-600 border-solid w-full px-3 py-2 rounded-md text-sm text-regular-light-gray-cl focus:outline-none focus:ring-2 focus:ring-regular-light-blue-cl">
+        <p class="whitespace-pre-line">- Không được rao bán Acc này ra ngoài, nếu có bất cứ hành vi nào sẽ bị cấm thuê
+          vĩnh viễn!
+          - Nghiêm cấm hành vi AFK, HACK, CHEAT, BOT, ... Nếu phát hiện sẽ bị cấm thuê vĩnh viễn!
+        </p>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-sm font-semibold text-white mb-2">Lời nhắn từ chủ tài khoản:</label>
+      <div
+        class="bg-transparent border border-gray-600 border-solid w-full px-3 py-2 rounded-md text-sm text-regular-light-gray-cl focus:outline-none focus:ring-2 focus:ring-regular-light-blue-cl resize-none"
+        rows="4">
+        <p>
+          Acc có đầy đủ skin, rank, level, nhớ đăng nhập thường xuyên để duy trì điểm số!
+        </p>
+      </div>
+    </div>
+
+    <p class="text-sm text-regular-light-gray-cl mb-2 italic font-semibold">
+      Bằng cách nhấn vào nút thuê ngay, bạn đã đồng ý với quy định trên!
+    </p>
+
+    <button class="CSS-button-blue-decoration py-[10px] w-full">
+      Thuê ngay
+    </button>
+  </div>
+</div>

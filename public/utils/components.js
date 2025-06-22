@@ -1,5 +1,28 @@
 import { html } from "https://esm.run/lit-html@1"
 
+// Modal handling functions
+export const showModal = (modalId) => {
+  const modal = document.getElementById(modalId)
+  if (modal) {
+    modal.classList.remove("hidden")
+    modal.classList.add("flex")
+    // Add backdrop click to close
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        hideModal(modalId)
+      }
+    })
+  }
+}
+
+export const hideModal = (modalId) => {
+  const modal = document.getElementById(modalId)
+  if (modal) {
+    modal.classList.add("hidden")
+    modal.classList.remove("flex")
+  }
+}
+
 export const AccCard = (item) => {
   const avatar =
     item.avatar.length <= 2
@@ -18,13 +41,10 @@ export const AccCard = (item) => {
         <h3 class="text-white font-semibold mb-3 h-[40px] text-sm overflow-hidden">
           ${item.title}
         </h3>
-        <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between gap-2">
           <div class="flex items-center gap-1.5">
             <span class="bg-[#3c3c3c] text-gray-300 text-xs font-medium px-2.5 py-1 rounded-md"
               >Min. 1</span
-            >
-            <span class="bg-[#3c3c3c] text-gray-300 text-xs font-medium px-2.5 py-1 rounded-md"
-              >1</span
             >
             <span
               class="flex items-center gap-1 bg-[#3c3c3c] text-gray-300 text-xs font-medium pl-2 pr-2.5 py-1 rounded-md"
@@ -77,7 +97,12 @@ export const AccCard = (item) => {
             <p class="text-gray-400 text-xs">VND</p>
           </div>
         </div>
-        <button class="CSS-button-blue-decoration py-1.5 mt-2">Thuê ngay</button>
+        <button
+          class="CSS-button-blue-decoration py-1.5 mt-2 rent-now-btn w-full"
+          data-item-id="${item.id || "default"}"
+        >
+          Thuê ngay
+        </button>
       </div>
     </div>
   `

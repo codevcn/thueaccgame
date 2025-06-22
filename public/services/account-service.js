@@ -1,4 +1,4 @@
-import { axiosClient } from "/utils/axios-client.js"
+import { axiosClient } from "../utils/axios-client.js"
 
 export class AccountService {
   static async fetchItems() {

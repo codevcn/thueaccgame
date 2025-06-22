@@ -1,6 +1,7 @@
 @use "colors.scss";
 @use "sizes.scss";
 @use "animations.scss";
+@use "sharings.scss" as sharings;
 
 [hidden] {
   display: none;
@@ -98,7 +99,7 @@ button {
 }
 
 .CSS-button-blue-decoration {
-  $color: #79d9ff;
+  $color: var(--vcn-regular-blue-cl);
 
   background-image: url("/imgs/button-decoration.png");
   background-size: 2px;
@@ -107,7 +108,6 @@ button {
   border: 1.5px solid #ffffff46;
   background-color: #0d161c;
   color: $color;
-  width: 100%;
   font-weight: bold;
   position: relative;
   border-radius: 6px;
@@ -180,7 +180,6 @@ button {
   border: 1.5px solid #ffffff46;
   background-color: #0d161c;
   color: $color;
-  width: 100%;
   font-weight: bold;
   position: relative;
   border-radius: 6px;
@@ -239,5 +238,26 @@ button {
     &::after {
       transform: scaleX(1);
     }
+  }
+}
+
+#CSS-dynamic-background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  display: block;
+  background: transparent;
+}
+
+.CSS-neon-text {
+  @include sharings.CSS-neon-text;
+}
+
+.CSS-neon-text-hover {
+  &:hover {
+    @include sharings.CSS-neon-text;
   }
 }
